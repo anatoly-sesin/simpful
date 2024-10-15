@@ -289,8 +289,10 @@ class FuzzySystem(object):
         if show_banner: self._banner()
 
     def _banner(self):
-        import pkg_resources
-        vrs = pkg_resources.get_distribution('simpful').version 
+        from importlib.metadata import version
+        vrs = version('simpful')
+        # import pkg_resources
+        # vrs = pkg_resources.get_distribution('simpful').version 
         print("  ____  __  _  _  ____  ____  _  _  __   ")
         print(" / ___)(  )( \\/ )(  _ \\(  __)/ )( \\(  ) v%s " % vrs)
         print(" \\___ \\ )( / \\/ \\ ) __/ ) _) ) \\/ (/ (_/\\ ")
